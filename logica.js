@@ -11,7 +11,7 @@ const btnCancel = document.getElementById('btn-cancel');
 async function loadBooks() {
     try {
         const response = await fetch(API_URL);
-        if (!response.ok) throw new Error(`Erro HTTP: ${response.status}`); // ✅ checa status
+        if (!response.ok) throw new Error(`Erro HTTP: ${response.status}`);
         const data = await response.json();
         renderTable(data);
     } catch (error) {
@@ -54,7 +54,7 @@ bookForm.addEventListener('submit', async (event) => {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(bookData)
         });
-        if (!response.ok) throw new Error(`Erro HTTP: ${response.status}`); // ✅ checa status
+        if (!response.ok) throw new Error(`Erro HTTP: ${response.status}`);
         resetForm();
         loadBooks();
     } catch (error) {
